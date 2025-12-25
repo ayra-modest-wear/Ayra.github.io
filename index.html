@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ayra Modest Wear</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #fff0f5;
+      color: #333;
+    }
+
+    /* Navigation */
+    nav {
+      background: #d63384;
+      padding: 15px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* Header */
+    header {
+      background: #d63384;
+      color: white;
+      padding: 35px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.2em;
+    }
+
+    /* About */
+    .about {
+      background: #fce4ec;
+      padding: 35px 25px;
+      text-align: center;
+    }
+
+    .about h2 {
+      color: #d63384;
+    }
+
+    .about p {
+      max-width: 750px;
+      margin: auto;
+      line-height: 1.7;
+    }
+
+    /* Products */
+    .products {
+      padding: 30px;
+      text-align: center;
+    }
+
+    .card {
+      display: inline-block;
+      background: white;
+      width: 220px;
+      margin: 15px;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    .card h3 {
+      color: #d63384;
+      margin: 10px 0 5px;
+    }
+
+    /* Buttons */
+    .btn {
+      background: #25D366;
+      color: white;
+      padding: 10px 15px;
+      text-decoration: none;
+      border-radius: 6px;
+      display: inline-block;
+      margin-top: 10px;
+      font-weight: bold;
+      transition: background 0.3s;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #1ebe5d;
+    }
+
+    /* Order Form */
+    .order-form {
+      background: #ffffff;
+      padding: 35px;
+      text-align: center;
+    }
+
+    .order-form input, .order-form select {
+      width: 90%;
+      max-width: 400px;
+      padding: 10px;
+      margin: 8px 0;
+    }
+
+    /* Footer */
+    footer {
+      background: #fce4ec;
+      padding: 25px;
+      text-align: center;
+      font-size: 0.95em;
+    }
+
+    footer a {
+      color: #d63384;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    @media(max-width: 650px) {
+      .card {
+        width: 90%;
+      }
+    }
+  </style>
+
+  <script>
+    function setProduct(productName) {
+      document.getElementById("product").value = productName;
+      location.href = "#order";
+    }
+
+    function sendOrder() {
+      let name = document.getElementById("name").value;
+      let phone = document.getElementById("phone").value;
+      let product = document.getElementById("product").value;
+
+      let message =
+        "🛍️ Order Request%0A" +
+        "Name: " + name + "%0A" +
+        "Phone: " + phone + "%0A" +
+        "Product: " + product;
+
+      window.open("https://wa.me/916369285752?text=" + message, "_blank");
+    }
+  </script>
+</head>
+
+<body>
+
+<nav>
+  <a href="#">Home</a>
+  <a href="#about">About</a>
+  <a href="#products">Products</a>
+  <a href="#order">Order</a>
+</nav>
+
+<header>
+  <h1>Ayra Modest Wear</h1>
+  <p>Elegant • Modest • Affordable Hijabs</p>
+</header>
+
+<section class="about" id="about">
+  <h2>About Us</h2>
+  <p>
+    Ayra Modest Wear offers a wide range of hijabs and modest fashion items with focus on comfort, style, and elegance.
+    We deliver quality products for every occasion.
+  </p>
+</section>
+
+<section class="products" id="products">
+  <h2>Our Products</h2>
+
+  <div class="card">
+    <img src="black-hijab.jpg" alt="Black Hijab">
+    <h3>Black Hijab</h3>
+    <p>₹900 – ₹1200</p>
+    <button class="btn" onclick="setProduct('Black Hijab')">Order Now</button>
+  </div>
+
+  <div class="card">
+    <img src="grey-hijab.jpg" alt="Grey Hijab">
+    <h3>Grey Hijab</h3>
+    <p>₹1200 – ₹1500</p>
+    <button class="btn" onclick="setProduct('Grey Hijab')">Order Now</button>
+  </div>
+
+  <div class="card">
+    <img src="peach-hijab.jpg" alt="Peach Hijab">
+    <h3>Peach Hijab</h3>
+    <p>₹1500</p>
+    <button class="btn" onclick="setProduct('Peach Hijab')">Order Now</button>
+  </div>
+
+  <div class="card">
+    <img src="hajj-material.jpg" alt="Hajj Material">
+    <h3>Hajj Material</h3>
+    <p>₹1000</p>
+    <button class="btn" onclick="setProduct('Hajj Material')">Order Now</button>
+  </div>
+
+  <div class="card">
+    <img src="maternity-kit.jpg" alt="Maternity Kit">
+    <h3>Maternity Kit</h3>
+    <p>₹1500</p>
+    <button class="btn" onclick="setProduct('Maternity Kit')">Order Now</button>
+  </div>
+</section>
+
+<section class="order-form" id="order">
+  <h2>Place Your Order</h2>
+
+  <input type="text" id="name" placeholder="Your Name" required><br>
+  <input type="tel" id="phone" placeholder="Phone Number" required><br>
+
+  <select id="product">
+    <option>Select Product</option>
+    <option>Black Hijab</option>
+    <option>Grey Hijab</option>
+    <option>Peach Hijab</option>
+    <option>Hajj Material</option>
+    <option>Maternity Kit</option>
+  </select>
+
+  <br><br>
+  <button class="btn" onclick="sendOrder()">Send Order on WhatsApp</button>
+
+  <h3 style="margin-top:30px;">Payment Options</h3>
+  <p>UPI / GPay / PhonePe</p>
+  <p><strong>UPI ID:</strong> ayra@upi</p>
+  <p>(Scan QR after adding image)</p>
+</section>
+
+<footer>
+  <p>📧 Email: <a href="mailto:info@ayra-modest-wear.com">info@ayra-modest-wear.com</a></p>
+  <p>📞 Contact: +91 9150225323</p>
+  <p>📸 Instagram: <a href="https://www.instagram.com/ayra.modest_wear_.official/" target="_blank">@ayra.modest_wear_.official</a></p>
+</footer>
+
+</body>
+</html>
